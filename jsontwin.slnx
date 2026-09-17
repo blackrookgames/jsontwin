@@ -1,0 +1,4 @@
+<Solution>
+    <Project Path="jsontwin/jsontwin.csproj" />
+    <Project Path="test/test.csproj" />
+</Solution>

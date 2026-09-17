@@ -1,0 +1,6 @@
+**/.secret/
+**/.venv/
+**/__pycache__/
+**/bin/
+**/obj/
+*.bat
