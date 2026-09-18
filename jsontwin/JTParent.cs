@@ -127,13 +127,26 @@ namespace jsontwin
         public JTElement Get(int index)
         {
             try
-            {
-                return f_Children[index];
-            }
+            { return f_Children[index]; }
             catch when (index < 0 || index >= f_Children.Count)
-            {
-                throw new ArgumentOutOfRangeException(nameof(index));
-            }
+            { throw new ArgumentOutOfRangeException(nameof(index)); }
+        }
+
+        /// <summary>Gets the child element at the specified index</summary>
+        /// <param name="index">Index of child element</param>
+        /// <returns>Child element at the specified index</returns>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="index"/> is out of range
+        /// </exception>
+        /// <exception cref="JTException">
+        ///     Child element is not an instance of <typeparamref name="T"/>
+        /// </exception>
+        public T Get<T>(int index) where T: JTElement
+        {
+            try
+            { return f_Children[index].CastAs<T>(); }
+            catch when (index < 0 || index >= f_Children.Count)
+            { throw new ArgumentOutOfRangeException(nameof(index)); }
         }
 
         #endregion

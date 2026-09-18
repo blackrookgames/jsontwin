@@ -6,6 +6,7 @@ using System.Text.Json;
 namespace jsontwin
 {
     /// <summary>Represents a JSON string element</summary>
+    [JTElement(Desc = "a string value")]
     public class JTString : JTElement
     {
         #region init

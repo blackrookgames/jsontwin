@@ -6,6 +6,7 @@ using System.Text.Json;
 namespace jsontwin
 {
     /// <summary>Represents a JSON array element</summary>
+    [JTElement(Desc = "an array")]
     public class JTArray : JTParent, IReadOnlyList<JTElement>
     {
         #region methods

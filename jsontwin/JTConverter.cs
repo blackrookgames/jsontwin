@@ -4,9 +4,13 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace jsontwin
 {
+
     public class JTConverter : JsonConverter<JTElement>
+
     {
         #region 
 
@@ -58,3 +62,5 @@ namespace jsontwin
         #endregion
     }
 }
+
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

@@ -6,6 +6,7 @@ using System.Text.Json;
 namespace jsontwin
 {
     /// <summary>Represents a JSON null element</summary>
+    [JTElement(Desc = "a null value")]
     public class JTNull : JTElement
     {
         #region JTElement

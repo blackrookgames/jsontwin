@@ -1,18 +1,17 @@
 ﻿using System;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace jsontwin
 {
+    /// <summary>Represents a JSON element</summary>
     [JsonConverter(typeof(JTConverter))]
     public abstract class JTElement
     {
         #region init
 
-        private protected JTElement()
-        {
-            
-        }
+        private protected JTElement() { }
 
         #endregion
         
@@ -80,6 +79,35 @@ namespace jsontwin
             MM_SetDocument(null);
             f_Parent = null;
             f_Index = -1;
+        }
+
+        #endregion
+
+        #region utility
+
+        /// <summary>Casts the current element as an instance of <typeparamref name="T"/></summary>
+        /// <returns>Current element casted as an instance of <typeparamref name="T"/></returns>
+        /// <exception cref="JTException">
+        ///     Current element is not an instance of <typeparamref name="T"/>
+        /// </exception>
+        public T CastAs<T>() where T: JTElement
+        {
+            if (this is not T casted)
+            {
+                string? desc = null;
+                try
+                {
+                    JTElementAttribute? attr = typeof(T).GetCustomAttribute<JTElementAttribute>();
+                    if (attr is not null)
+                    {
+                        desc = attr.Desc;
+                    }
+                }
+                catch { }
+                desc ??= typeof(T).Name;
+                throw new JTException(this, $"Expected {desc}.");
+            }
+            return casted;
         }
 
         #endregion

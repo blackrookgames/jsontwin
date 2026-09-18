@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
 namespace jsontwin
 {
     /// <summary>Represents a JSON object element</summary>
+    [JTElement(Desc = "an object")]
     public class JTObject : JTParent, IReadOnlyList<JTObjectProperty>
     {
         #region init
 
+        /// <summary>Initializer for <see cref="JTObject"/></summary>
         public JTObject()
         {
             f_Properties = new(Capacity);
@@ -103,6 +106,73 @@ namespace jsontwin
         public void Clear()
         {
             while (Count > 0) RemoveAt(Count - 1);
+        }
+
+        #endregion
+
+        #region utility
+
+        /// <summary>Attempts to get the element of the property with the specified name</summary>
+        /// <param name="name">Property name</param>
+        /// <param name="element">Property element</param>
+        /// <returns>Whether or not the property was found</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="name"/> is null
+        /// </exception>
+        public bool TryGet(string name, [MaybeNullWhen(false)] out JTElement element)
+        {
+            ArgumentNullException.ThrowIfNull(name);
+            foreach (var property in f_Properties)
+            {
+                if (property.Name == name)
+                {
+                    element = property.Element;
+                    return true;
+                }
+            }
+            element = null;
+            return false;
+        }
+
+        /// <summary>Gets the element of the property with the specified name</summary>
+        /// <param name="name">Property name</param>
+        /// <returns>Property element</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="name"/> is null
+        /// </exception>
+        /// <exception cref="JTException">
+        ///     Property could not be found
+        /// </exception>
+        public JTElement Get(string name)
+        {
+            try
+            {
+                if (TryGet(name, out var element)) return element;
+                throw new JTException(this, $"Could not find a property named \"{name}\".");
+            }
+            catch when (name is null)
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+        }
+
+        /// <summary>Gets the element of the property with the specified name</summary>
+        /// <param name="name">Property name</param>
+        /// <returns>Property element</returns>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="name"/> is null
+        /// </exception>
+        /// <exception cref="JTException">
+        ///     Property could not be found
+        ///     <br/>or<br/>
+        ///     Property element is not an instance of <typeparamref name="T"/>
+        /// </exception>
+        public T Get<T>(string name) where T: JTElement
+        {
+            try
+            { return Get(name).CastAs<T>(); }
+            catch when (name is null)
+            { throw new ArgumentNullException(nameof(name)); }
         }
 
         #endregion

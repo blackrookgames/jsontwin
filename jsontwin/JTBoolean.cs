@@ -6,6 +6,7 @@ using System.Text.Json;
 namespace jsontwin
 {
     /// <summary>Represents a JSON boolean element</summary>
+    [JTElement(Desc = "a boolean value")]
     public class JTBoolean : JTElement
     {
         #region init

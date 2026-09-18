@@ -6,4 +6,24 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>jsontwin</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Zachary Aaron Combs</Authors>
+    <Company>Black Rook Games</Company>
+    <Description>Library for opening and editing JSON files</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/blackrookgames/jsontwin</RepositoryUrl>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="docs/README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
 </Project>
