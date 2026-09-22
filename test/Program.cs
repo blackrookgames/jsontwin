@@ -10,7 +10,6 @@ Console.WriteLine(doc.RootElement!.CastAs<JTObject>().
     Get<JTArray>("sheets").
     Get<JTObject>(3).
     Get<JTArray>("swaps").
-    Get<JTString>(0).
-    Value);
+    Get<JTObject>(0));
 using (var s = File.OpenWrite("./test.output.json"))
     doc.Save(s);

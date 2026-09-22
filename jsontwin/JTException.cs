@@ -66,6 +66,7 @@ namespace jsontwin
                     }
                     if (message is not null)
                         sw.Write(' ');
+                    sw.Write("JSON element ");
                     for (int i = tree.Count - 2; i >= 0; --i)
                     {
                         element = tree[i];
