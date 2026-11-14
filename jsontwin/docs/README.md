@@ -2,26 +2,30 @@
 
 ## jsontwin
 
-[JTArray](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtarray.md)
+[IJTDeserializable&lt;TElement&gt;](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.ijtdeserializable-1.md)
 
-[JTBoolean](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtboolean.md)
+[IJTSerializable&lt;TElement&gt;](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.ijtserializable-1.md)
 
-[JTConverter](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtconverter.md)
+[JTArray](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtarray.md)
 
-[JTDocument](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtdocument.md)
+[JTBoolean](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtboolean.md)
 
-[JTElement](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtelement.md)
+[JTConverter](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtconverter.md)
 
-[JTException](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtexception.md)
+[JTDocument](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtdocument.md)
 
-[JTNull](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtnull.md)
+[JTElement](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtelement.md)
 
-[JTNumber](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtnumber.md)
+[JTException](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtexception.md)
 
-[JTObject](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtobject.md)
+[JTNull](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtnull.md)
 
-[JTObjectProperty](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtobjectproperty.md)
+[JTNumber](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtnumber.md)
 
-[JTParent](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtparent.md)
+[JTObject](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtobject.md)
 
-[JTString](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.1/jsontwin.jtstring.md)
+[JTObjectProperty](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtobjectproperty.md)
+
+[JTParent](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtparent.md)
+
+[JTString](https://github.com/blackrookgames/jsontwin/tree/main/jsontwin/docs/1.0.2/jsontwin.jtstring.md)

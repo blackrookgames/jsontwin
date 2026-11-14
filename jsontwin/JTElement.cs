@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -84,6 +86,35 @@ namespace jsontwin
         #endregion
 
         #region utility
+
+        /// <summary>Generates the JSON path to the element</summary>
+        /// <returns>Generated path</returns>
+        public string GetJSONPath()
+        {
+            // Get lineage
+            List<JTElement> lineage = [];
+            JTElement? e = this;
+            while (e is not null)
+            {
+                lineage.Add(e);
+                e = e.f_Parent;
+            }
+            // Generate path
+            StringBuilder sb = new();
+            for (int i = lineage.Count - 1; i > 0; --i)
+            {
+                var child = lineage[i - 1];
+                // Write name or index
+                if (child.f_Parent is JTObject parentObject)
+                    sb.Append(parentObject[child.f_Index].Name);
+                else
+                    sb.Append(child.f_Index);
+                // Write separator
+                if (i > 1) sb.Append('/');
+            }
+            // Success!!!
+            return sb.ToString();
+        }
 
         /// <summary>Casts the current element as an instance of <typeparamref name="T"/></summary>
         /// <returns>Current element casted as an instance of <typeparamref name="T"/></returns>
